@@ -1,6 +1,15 @@
-A bunch of import tools for the [neo4j-shell](http://docs.neo4j.org/chunked/stable/shell.html)
+A bunch of import tools for [neo4j-shell](http://docs.neo4j.org/chunked/stable/shell.html) which comes as part of the [neo4j](http://www.neo4j.org/) graph database.
 
-Currently
+### Getting Started
+
+Installation
+
+````
+git clone git@github.com:jexp/neo4j-shell-tools.git
+cd neo4j-shell-tools
+mvn clean package dependency:copy-dependencies
+cp target/import-tools-1.0-SNAPSHOT.jar target/dependency/opencsv-2.3.jar target/dependency/neo4j-geoff-1.7-SNAPSHOT.jar target/dependency/mapdb-0.9.3.jar /path/to/neo4j/lib/
+````
 
 ### Auto-Index `auto-index`
 
@@ -124,12 +133,7 @@ It took 5 minutes to import on my MBA:
 
 `Finished: nodes = 343266 rels = 1903201 properties = 8888993 total time 313491 ms`
 
-Installation:
 
-````
-mvn clean package dependency:copy-dependencies
-
-cp target/import-tools-1.0-SNAPSHOT.jar target/dependency/opencsv-2.3.jar target/dependency/neo4j-geoff-1.7-SNAPSHOT.jar target/dependency/mapdb-0.9.3.jar /path/to/neo/lib/
 ````
 
 or make those two files available on your neo4j-shell classpath
