@@ -1,4 +1,4 @@
-A bunch of import tools for the neo4j-shell
+A bunch of import tools for the [neo4j-shell](http://docs.neo4j.org/chunked/stable/shell.html)
 
 Currently
 
