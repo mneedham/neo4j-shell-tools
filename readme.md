@@ -30,7 +30,7 @@ cd /path/to/neo4j-community-1.9.1
 
 #### Cypher Import
 
-Create nodes and relationships using [write clauses](http://docs.neo4j.org/chunked/milestone/query-write.html) in the [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) query language.
+Create data using [write clauses](http://docs.neo4j.org/chunked/milestone/query-write.html) in the [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) query language.
 
 `import-cypher [-i in.csv] [-o out.csv] [-d,] [-q] [-b 10000] create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
 
@@ -70,6 +70,8 @@ id	name
 
 ### Geoff Import
 
+Create data using [geoff](http://nigelsmall.com/geoff) - a declarative notation for representing graph data in a human-readable format.
+
 `import-geoff [-g in.geoff]`
 
 - -g in.geoff: newline separated geoff rule file
@@ -93,13 +95,15 @@ Output
 
 ### GraphML Import
 
+Create data using [GraphML](http://graphml.graphdrawing.org/) - an XML based file format used to describe graphs.
+
 `import-graphml [-i in.xml] [-t REL_TYPE] [-b 20000] [-c]`
 
 - -i in.xml: graphml file
 - supports attributes, supports only single pass parsing, optimization for `parse.nodeids="canonical"`
 - -t REL_TYPE default relationship-type for relationships without a label attribute
 - -b batch-size batch-commit size
-- -c uses a cache that spills to disk for very large imports (uses mapdb-0.9.3.jar)
+- -c uses a cache that spills to disk for very large imports
 
 Example input file: in.xml
 
@@ -133,6 +137,18 @@ Output
 
 `GraphML import created 3 entities.`
 
+### Other Technical Details
+
+#### Performance Testing the GraphML import
+
+An import of @chrisdiehl's [Enron Dataset](http://www.infochimps.com/datasets/enron-email-data-with-manager-subordinate-relationship-metadata) in GraphML took 5 minutes to import on a MBA:
+
+`Finished: nodes = 343266 rels = 1903201 properties = 8888993 total time 313491 ms`
+
+#### Libraries used
+* Cypher Import uses [opencsv-2.3.jar](http://opencsv.sourceforge.net/) for parsing CSV files.
+* GraphML Import uses [mapdb-0.9.3.jar](http://www.mapdb.org/) as part of the cache (-c) flag for very large imports
+
 
 ### Auto-Index `auto-index`
 
@@ -142,14 +158,6 @@ Usage:
 
 - -r stops indexing those properties
 
-#### Performance Test
-
-I imported the Enron Dataset in GraphML that @chrisdiehl generated a while ago.
-See http://www.infochimps.com/datasets/enron-email-data-with-manager-subordinate-relationship-metadata
-
-It took 5 minutes to import on my MBA:
-
-`Finished: nodes = 343266 rels = 1903201 properties = 8888993 total time 313491 ms`
 
 ### Manual Build & Install
 
