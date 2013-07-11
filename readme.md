@@ -27,14 +27,14 @@ That assumes a default neo4j instance running on port 7474. You can call `./bin/
 
 ### Importing workflow
 
-Before importing data, use the [Auto Index](#auto-import) command to set up indexing so that you'll be able to find the data afterwards.
+Before importing data, use the [Auto Index](#setup-auto-indexing) command to set up indexing so that you'll be able to find the data afterwards.
 
 Then choose an suitable import command, depending on how your data is structured.
 * If your data is formatted as [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) statements, use the [Cypher Import](#cypher-import) command.
 * If your data is in [geoff](http://nigelsmall.com/geoff) format, use the [Geoff Import](#geoff-import) command.
 * If your data is in [GraphML](http://graphml.graphdrawing.org/) format, use the [GraphML Import](#graphml-import) command.
 
-#### Auto Index
+#### Setup auto indexing
 
 The auto index command is used to automatically create indexes on certain properties defined on nodes or relationships. This is in addition to the properties defined in 'conf/neo4j.properties'.
 
