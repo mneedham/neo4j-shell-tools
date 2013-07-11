@@ -13,15 +13,9 @@ wget http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip
 unzip neo4j-shell-tools-1.9.zip -d lib
 ````
 
-### Auto-Index `auto-index`
+### Importing Data
 
-Usage:
-
-`auto-index [-t Node|Relationship] [-r] name age title` 
-
-- -r stops indexing those properties
-
-### Cypher Import `import-cypher`
+#### Cypher Import
 
 `import-cypher [-i in.csv] [-o out.csv] [-d,] [-q] [-b 10000] create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
 
@@ -30,7 +24,6 @@ Usage:
 - -q: input/output file with quotes
 - -d delim: delim used to separate files
 - -b size: batch size for intermediate commits
-- uses opencsv-2.3.jar
 
 Example input file: in.csv
 
@@ -125,6 +118,14 @@ Output
 
 `GraphML import created 3 entities.`
 
+
+### Auto-Index `auto-index`
+
+Usage:
+
+`auto-index [-t Node|Relationship] [-r] name age title` 
+
+- -r stops indexing those properties
 
 #### Performance Test
 
