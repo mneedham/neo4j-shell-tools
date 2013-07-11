@@ -137,7 +137,7 @@ GraphML import created 3 entities.
 
 #### Performance Testing the GraphML import
 
-An import of @chrisdiehl's [Enron Dataset](http://www.infochimps.com/datasets/enron-email-data-with-manager-subordinate-relationship-metadata) in GraphML took 5 minutes to import on a MBA:
+An import of [@chrisdiehl](https://twitter.com/chrisdiehl)'s [Enron Dataset](http://www.infochimps.com/datasets/enron-email-data-with-manager-subordinate-relationship-metadata) in GraphML took 5 minutes to import on a MBA:
 
 `Finished: nodes = 343266 rels = 1903201 properties = 8888993 total time 313491 ms`
 
