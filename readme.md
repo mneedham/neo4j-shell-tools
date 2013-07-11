@@ -50,7 +50,7 @@ $ auto-index name age title
 
 #### Cypher Import
 
-Create data using [write clauses](http://docs.neo4j.org/chunked/milestone/query-write.html) in the [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) query language.
+Populate your database with [write clauses](http://docs.neo4j.org/chunked/milestone/query-write.html) in the [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) query language.
 
 `import-cypher [-i in.csv] [-o out.csv] [-d,] [-q] [-b 10000] create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
 
@@ -89,7 +89,7 @@ id	name
 
 #### Geoff Import
 
-Create data using [geoff](http://nigelsmall.com/geoff) - a declarative notation for representing graph data in a human-readable format.
+Populate your database with [geoff](http://nigelsmall.com/geoff) - a declarative notation for representing graph data in a human-readable format.
 
 `import-geoff [-g in.geoff]`
 
@@ -112,7 +112,7 @@ Geoff import created 3 entities.
 
 #### GraphML Import
 
-Create data using [GraphML](http://graphml.graphdrawing.org/) - an XML based file format used to describe graphs.
+Populate your database from [GraphML](http://graphml.graphdrawing.org/) files. GraphML is an XML file format used to describe graphs.
 
 `import-graphml [-i in.xml] [-t REL_TYPE] [-b 20000] [-c]`
 
