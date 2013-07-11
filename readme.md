@@ -22,6 +22,8 @@ cd /path/to/neo4j-community-1.9.1
 ./bin/neo4j-shell
 ````
 
+That assumes a default neo4j instance running on port 7474 but calling `./bin/neo4j-shell --help` will list other ways of connecting to a neo4j instance.
+
 #### Available Commands
 
 * [Cypher Import](#cypher-import)
