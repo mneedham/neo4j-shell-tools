@@ -152,6 +152,10 @@ $ import-graphml -i in.xml
 GraphML import created 3 entities.
 ````
 
+### Prerequisites
+
+An up and running neo4j database which you can [download from here](http://www.neo4j.org/download).
+
 ### Other Technical Details
 
 #### Libraries used
