@@ -66,7 +66,7 @@ id	name
 4	Selma
 ````
 
-### Geoff Import `import-geoff`
+### Geoff Import
 
 `import-geoff [-g in.geoff]`
 
@@ -89,7 +89,7 @@ Output
 
 `Geoff import created 3 entities.`
 
-### GraphML Import `import-graphml`
+### GraphML Import
 
 `import-graphml [-i in.xml] [-t REL_TYPE] [-b 20000] [-c]`
 
