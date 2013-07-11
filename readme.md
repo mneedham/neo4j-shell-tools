@@ -54,7 +54,7 @@ Run the command:
 
 ````
 $ import-cypher -i in.csv -o out.csv create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name
-Import statement execution created 3 rows of output.`
+Import statement execution created 3 rows of output.
 ````
 
 Output file: out.csv
@@ -74,7 +74,6 @@ Create data using [geoff](http://nigelsmall.com/geoff) - a declarative notation 
 `import-geoff [-g in.geoff]`
 
 - -g in.geoff: newline separated geoff rule file
-- uses neo4j-geoff-1.7-SNAPSHOT.jar
 
 Example input file: in.geoff
 
@@ -145,6 +144,7 @@ An import of @chrisdiehl's [Enron Dataset](http://www.infochimps.com/datasets/en
 #### Libraries used
 * Cypher Import uses [opencsv-2.3.jar](http://opencsv.sourceforge.net/) for parsing CSV files.
 * GraphML Import uses [mapdb-0.9.3.jar](http://www.mapdb.org/) as part of the cache (-c) flag for very large imports
+* Geoff Import uses [neo4j-geoff-1.7-SNAPSHOT.jar](http://nigelsmall.com/geoff)
 
 
 ### Auto-Index `auto-index`
