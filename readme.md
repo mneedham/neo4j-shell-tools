@@ -22,6 +22,12 @@ cd /path/to/neo4j-community-1.9.1
 ./bin/neo4j-shell
 ````
 
+#### Available Commands
+
+* [Cypher Import](#cypher-import)
+* [Geoff Import](#geoff-import)
+* [GraphML Import](#graphml-import)
+
 #### Cypher Import
 
 `import-cypher [-i in.csv] [-o out.csv] [-d,] [-q] [-b 10000] create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
