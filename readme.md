@@ -50,13 +50,12 @@ Rana	8
 Selma	5
 ````
 
-Running the command:
+Run the command:
 
-`import-cypher -i in.csv -o out.csv create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
-
-Output
-
-`Import statement execution created 3 rows of output.`
+````
+$ import-cypher -i in.csv -o out.csv create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name
+Import statement execution created 3 rows of output.`
+````
 
 Output file: out.csv
 
@@ -85,13 +84,12 @@ Example input file: in.geoff
 (A)-[r:KNOWS]->(B)
 ````
 
-Running the command:
+Run the command:
 
-`import-geoff -g in.geoff`
-
-Output
-
-`Geoff import created 3 entities.`
+````
+$ import-geoff -g in.geoff`
+Geoff import created 3 entities.
+````
 
 ### GraphML Import
 
@@ -129,13 +127,12 @@ Example input file: in.xml
 </graphml>
 ````
 
-Running the command:
+Run the command:
 
-`import-graphml -i in.xml`
-
-Output
-
-`GraphML import created 3 entities.`
+````
+$ import-graphml -i in.xml
+GraphML import created 3 entities.
+````
 
 ### Other Technical Details
 
