@@ -5,11 +5,12 @@ neo4j-shell-tools adds a bunch of commands to [neo4j-shell](http://docs.neo4j.or
 ### Installation
 
 Download [neo4j-shell-tools-1.9.zip](http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip) and extract it in your
-servers lib directory (/path/to/neo4j-community-1.9/lib)
+neo4j server's lib directory e.g.
 
 ````
+cd /path/to/neo4j-community-1.9.1
 wget http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip 
-unzip neo4j-shell-tools-1.9.zip -d /path/to/neo4j-community-1.9/lib
+unzip neo4j-shell-tools-1.9.zip -d lib
 ````
 
 ### Auto-Index `auto-index`
