@@ -26,9 +26,18 @@ That assumes a default neo4j instance running on port 7474. You can call `./bin/
 
 #### Available Commands
 
+* [Auto Index](#auto-import)
 * [Cypher Import](#cypher-import)
 * [Geoff Import](#geoff-import)
 * [GraphML Import](#graphml-import)
+
+#### Auto Index
+
+Not about importing data per-sec, the auto index command is used to automatically create indexes on certain properties defined on nodes or relationships. This is in addition to the properties defined in 'conf/neo4j.properties'.
+
+`auto-index [-t Node|Relationship] [-r] name age title` 
+
+- -r stops indexing those properties
 
 #### Cypher Import
 
@@ -137,26 +146,16 @@ GraphML import created 3 entities.
 
 ### Other Technical Details
 
-#### Performance Testing the GraphML import
-
-An import of [@chrisdiehl](https://twitter.com/chrisdiehl)'s [Enron Dataset](http://www.infochimps.com/datasets/enron-email-data-with-manager-subordinate-relationship-metadata) in GraphML took 5 minutes to import on a MBA:
-
-`Finished: nodes = 343266 rels = 1903201 properties = 8888993 total time 313491 ms`
-
 #### Libraries used
 * Cypher Import uses [opencsv-2.3.jar](http://opencsv.sourceforge.net/) for parsing CSV files.
 * GraphML Import uses [mapdb-0.9.3.jar](http://www.mapdb.org/) as part of the cache (-c) flag for very large imports
 * Geoff Import uses [neo4j-geoff-1.7-SNAPSHOT.jar](http://nigelsmall.com/geoff)
 
+#### Performance Testing the GraphML import
 
-### Auto-Index `auto-index`
+An import of [@chrisdiehl](https://twitter.com/chrisdiehl)'s [Enron Dataset](http://www.infochimps.com/datasets/enron-email-data-with-manager-subordinate-relationship-metadata) in GraphML took 5 minutes to import on a MBA:
 
-Usage:
-
-`auto-index [-t Node|Relationship] [-r] name age title` 
-
-- -r stops indexing those properties
-
+`Finished: nodes = 343266 rels = 1903201 properties = 8888993 total time 313491 ms`
 
 ### Manual Build & Install
 
