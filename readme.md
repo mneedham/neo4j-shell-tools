@@ -133,7 +133,17 @@ It took 5 minutes to import on my MBA:
 
 `Finished: nodes = 343266 rels = 1903201 properties = 8888993 total time 313491 ms`
 
+## Installation:
 
+Download [neo4j-shell-tools-1.9.zip](http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip) and extract it in your
+servers lib directory (/path/to/neo-community-1.9/lib)
+
+### Manual Build & Install
+
+````
+mvn clean package dependency:copy-dependencies
+
+cp target/import-tools-1.0-SNAPSHOT.jar target/dependency/opencsv-2.3.jar target/dependency/neo4j-geoff-1.7-SNAPSHOT.jar target/dependency/mapdb-0.9.3.jar /path/to/neo-community-1.9/lib
 ````
 
 or make those two files available on your neo4j-shell classpath
