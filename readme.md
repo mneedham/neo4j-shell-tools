@@ -67,7 +67,7 @@ id	name
 4	Selma
 ````
 
-### Geoff Import
+#### Geoff Import
 
 Create data using [geoff](http://nigelsmall.com/geoff) - a declarative notation for representing graph data in a human-readable format.
 
@@ -90,7 +90,7 @@ $ import-geoff -g in.geoff`
 Geoff import created 3 entities.
 ````
 
-### GraphML Import
+#### GraphML Import
 
 Create data using [GraphML](http://graphml.graphdrawing.org/) - an XML based file format used to describe graphs.
 
