@@ -15,6 +15,13 @@ unzip neo4j-shell-tools-1.9.zip -d lib
 
 ### Importing Data
 
+The first step is to startup the neo4j-shell from your neo4j directory:
+
+````
+cd /path/to/neo4j-community-1.9.1
+./bin/neo4j-shell
+````
+
 #### Cypher Import
 
 `import-cypher [-i in.csv] [-o out.csv] [-d,] [-q] [-b 10000] create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
