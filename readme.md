@@ -9,16 +9,17 @@ neo4j server's lib directory e.g.
 
 ````
 cd /path/to/neo4j-community-1.9.1
-wget http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip 
-unzip neo4j-shell-tools-1.9.zip -d lib
+curl http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip -o neo4j-shell-tools.zip 
+unzip neo4j-shell-tools.zip -d lib
 ````
 
 ### Before you start
 
-Startup the neo4j-shell from your neo4j directory:
+Restart neo4j and then launch the neo4j-shell:
 
 ````
 cd /path/to/neo4j-community-1.9.1
+./bin/neo4j restart
 ./bin/neo4j-shell
 ````
 
@@ -46,6 +47,7 @@ Usage:
 
 ````
 $ auto-index name age title
+Enabling auto-indexing of Node properties: [name, age, title]
 ````
 
 #### Cypher Import
