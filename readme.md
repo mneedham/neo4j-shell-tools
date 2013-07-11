@@ -30,6 +30,8 @@ cd /path/to/neo4j-community-1.9.1
 
 #### Cypher Import
 
+Create nodes and relationships using [write clauses](http://docs.neo4j.org/chunked/milestone/query-write.html) in the [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) query language.
+
 `import-cypher [-i in.csv] [-o out.csv] [-d,] [-q] [-b 10000] create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
 
 - -i file.csv: tab or comma separated input data file, with header, header names are param-names, statement will be executed with each row
