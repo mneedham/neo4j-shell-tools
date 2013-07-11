@@ -1,14 +1,14 @@
-A bunch of import tools for [neo4j-shell](http://docs.neo4j.org/chunked/stable/shell.html) which comes as part of the [neo4j](http://www.neo4j.org/) graph database.
+# Import data into your neo4j database from the neo4j-shell command
+
+neo4j-shell-tools adds a collection of commands to [neo4j-shell](http://docs.neo4j.org/chunked/stable/shell.html) which allow you to insert data into your database without any hassle.
 
 ### Getting Started
 
-Installation
+Download [neo4j-shell-tools-1.9.zip](http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip) and extract it in your
+servers lib directory (/path/to/neo4j-community-1.9/lib)
 
 ````
-git clone git@github.com:jexp/neo4j-shell-tools.git
-cd neo4j-shell-tools
-mvn clean package dependency:copy-dependencies
-cp target/import-tools-1.0-SNAPSHOT.jar target/dependency/opencsv-2.3.jar target/dependency/neo4j-geoff-1.7-SNAPSHOT.jar target/dependency/mapdb-0.9.3.jar /path/to/neo4j/lib/
+wget http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip && unzip neo4j-shell-tools-1.9.zip -d /path/to/neo4j-community-1.9/lib
 ````
 
 ### Auto-Index `auto-index`
@@ -133,17 +133,13 @@ It took 5 minutes to import on my MBA:
 
 `Finished: nodes = 343266 rels = 1903201 properties = 8888993 total time 313491 ms`
 
-## Installation:
-
-Download [neo4j-shell-tools-1.9.zip](http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip) and extract it in your
-servers lib directory (/path/to/neo-community-1.9/lib)
-
 ### Manual Build & Install
 
 ````
+git clone git@github.com:jexp/neo4j-shell-tools.git
+cd neo4j-shell-tools
 mvn clean package dependency:copy-dependencies
-
-cp target/import-tools-1.0-SNAPSHOT.jar target/dependency/opencsv-2.3.jar target/dependency/neo4j-geoff-1.7-SNAPSHOT.jar target/dependency/mapdb-0.9.3.jar /path/to/neo-community-1.9/lib
+cp target/import-tools-1.0-SNAPSHOT.jar target/dependency/opencsv-2.3.jar target/dependency/neo4j-geoff-1.7-SNAPSHOT.jar target/dependency/mapdb-0.9.3.jar /path/to/neo4j-community-1.9/lib
 ````
 
 or make those two files available on your neo4j-shell classpath
