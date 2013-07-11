@@ -13,9 +13,9 @@ wget http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip
 unzip neo4j-shell-tools-1.9.zip -d lib
 ````
 
-### Importing Data
+### Before you start
 
-The first step is to startup the neo4j-shell from your neo4j directory:
+Startup the neo4j-shell from your neo4j directory:
 
 ````
 cd /path/to/neo4j-community-1.9.1
@@ -24,12 +24,15 @@ cd /path/to/neo4j-community-1.9.1
 
 That assumes a default neo4j instance running on port 7474. You can call `./bin/neo4j-shell --help` to get a list of other ways to connect to a neo4j instance.
 
-#### Available Commands
 
-* [Auto Index](#auto-import)
-* [Cypher Import](#cypher-import)
-* [Geoff Import](#geoff-import)
-* [GraphML Import](#graphml-import)
+### Importing workflow
+
+Before importing data, use the [Auto Index](#auto-import) command to set up indexing so that you'll be able to find the data afterwards.
+
+Then choose an suitable import command, depending on how your data is structured.
+* If your data is formatted as [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) statements, use the [Cypher Import](#cypher-import) command.
+* If your data is in [geoff](http://nigelsmall.com/geoff) format, use the [Geoff Import](#geoff-import) command.
+* If your data is in [GraphML](http://graphml.graphdrawing.org/) format, use the [GraphML Import](#graphml-import) command.
 
 #### Auto Index
 
