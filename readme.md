@@ -108,7 +108,6 @@ Create data using [GraphML](http://graphml.graphdrawing.org/) - an XML based fil
 `import-graphml [-i in.xml] [-t REL_TYPE] [-b 20000] [-c]`
 
 - -i in.xml: graphml file
-- supports attributes, supports only single pass parsing, optimization for `parse.nodeids="canonical"`
 - -t REL_TYPE default relationship-type for relationships without a label attribute
 - -b batch-size batch-commit size
 - -c uses a cache that spills to disk for very large imports
@@ -151,9 +150,11 @@ GraphML import created 3 entities.
 * GraphML Import uses [mapdb-0.9.3.jar](http://www.mapdb.org/) as part of the cache (-c) flag for very large imports
 * Geoff Import uses [neo4j-geoff-1.7-SNAPSHOT.jar](http://nigelsmall.com/geoff)
 
-#### Performance Testing the GraphML import
+#### More on GraphML
 
-An import of [@chrisdiehl](https://twitter.com/chrisdiehl)'s [Enron Dataset](http://www.infochimps.com/datasets/enron-email-data-with-manager-subordinate-relationship-metadata) in GraphML took 5 minutes to import on a MBA:
+The 'import-graphml' command supports attributes, supports only single pass parsing, optimization for `parse.nodeids="canonical"`
+
+An import of [@chrisdiehl](https://twitter.com/chrisdiehl)'s [Enron Dataset](http://www.infochimps.com/datasets/enron-email-data-with-manager-subordinate-relationship-metadata) took 5 minutes on a MBA:
 
 `Finished: nodes = 343266 rels = 1903201 properties = 8888993 total time 313491 ms`
 
