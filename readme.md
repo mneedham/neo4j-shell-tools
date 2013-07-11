@@ -36,7 +36,7 @@ Then choose an suitable import command, depending on how your data is structured
 
 #### Auto Index
 
-Not about importing data per-sec, the auto index command is used to automatically create indexes on certain properties defined on nodes or relationships. This is in addition to the properties defined in 'conf/neo4j.properties'.
+The auto index command is used to automatically create indexes on certain properties defined on nodes or relationships. This is in addition to the properties defined in 'conf/neo4j.properties'.
 
 `auto-index [-t Node|Relationship] [-r] name age title` 
 
