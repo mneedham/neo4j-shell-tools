@@ -39,6 +39,12 @@ Not about importing data per-sec, the auto index command is used to automaticall
 
 - -r stops indexing those properties
 
+Usage:
+
+````
+$ auto-index name age title
+````
+
 #### Cypher Import
 
 Create data using [write clauses](http://docs.neo4j.org/chunked/milestone/query-write.html) in the [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) query language.
@@ -61,7 +67,7 @@ Rana	8
 Selma	5
 ````
 
-Run the command:
+Usage:
 
 ````
 $ import-cypher -i in.csv -o out.csv create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name
@@ -94,7 +100,7 @@ Example input file: in.geoff
 (A)-[r:KNOWS]->(B)
 ````
 
-Run the command:
+Usage:
 
 ````
 $ import-geoff -g in.geoff`
@@ -136,7 +142,7 @@ Example input file: in.xml
 </graphml>
 ````
 
-Run the command:
+Usage:
 
 ````
 $ import-graphml -i in.xml
