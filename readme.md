@@ -1,14 +1,15 @@
 # Import data into your neo4j database from the neo4j-shell command
 
-neo4j-shell-tools adds a collection of commands to [neo4j-shell](http://docs.neo4j.org/chunked/stable/shell.html) which allow you to insert data into your database without any hassle.
+neo4j-shell-tools adds a bunch of commands to [neo4j-shell](http://docs.neo4j.org/chunked/stable/shell.html) which allow you to insert data into your database without any hassle.
 
-### Getting Started
+### Installation
 
 Download [neo4j-shell-tools-1.9.zip](http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip) and extract it in your
 servers lib directory (/path/to/neo4j-community-1.9/lib)
 
 ````
-wget http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip && unzip neo4j-shell-tools-1.9.zip -d /path/to/neo4j-community-1.9/lib
+wget http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip 
+unzip neo4j-shell-tools-1.9.zip -d /path/to/neo4j-community-1.9/lib
 ````
 
 ### Auto-Index `auto-index`
