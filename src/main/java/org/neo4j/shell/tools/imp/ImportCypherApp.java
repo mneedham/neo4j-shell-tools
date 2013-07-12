@@ -48,14 +48,29 @@ public class ImportCypherApp extends GraphDatabaseApp {
         return "import-cypher";
     }
 
+    private char delim(String value) {
+        if (value.length()==1) return value.charAt(0);
+        if (value.contains("\\t")) return '\t';
+        if (value.contains(" ")) return ' ';
+        throw new RuntimeException("Illegal delimiter '"+value+"'");
+    }
+
+    private String name(File file) {
+        if (file==null) return "(none)";
+        return file.getName();
+    }
+
     @Override
     protected Continuation exec(AppCommandParser parser, Session session, Output out) throws Exception {
-        char delim = parser.option("d", ",").charAt(0);
+        char delim = delim(parser.option("d", ","));
         int batchSize = Integer.parseInt(parser.option("b", String.valueOf(DEFAULT_BATCH_SIZE)));
         boolean quotes = parser.options().containsKey("q");
         File inputFile = fileFor(parser, "i");
         File outputFile = fileFor(parser, "o");
         String query = extractQuery(parser);
+
+        out.println(String.format("Query: %s infile %s delim '%s' quoted %s outfile %s batch-size %d",
+                query,name(inputFile),delim,quotes,name(outputFile),batchSize));
 
         CSVReader reader = createReader(inputFile, delim, quotes);
 
@@ -79,6 +94,7 @@ public class ImportCypherApp extends GraphDatabaseApp {
         while (!options.isEmpty() && line.startsWith("-")) {
             String option = options.remove(line.substring(1, 2));
             int offset = 3 + option.length();
+            if (option.trim().isEmpty()) offset+=2; // for quoted space or tab
             int idx = line.indexOf(" ", offset);
             if (idx != -1) line = line.substring(idx+1).trim();
         }

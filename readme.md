@@ -49,15 +49,15 @@ $ auto-index name age title
 
 Create data using [write clauses](http://docs.neo4j.org/chunked/milestone/query-write.html) in the [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) query language.
 
-`import-cypher [-i in.csv] [-o out.csv] [-d,] [-q] [-b 10000] create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
+`import-cypher [-i in.csv] [-o out.csv] [-d ,] [-q] [-b 10000] create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
 
 - -i file.csv: tab or comma separated input data file, with header. Header names are used as param-names. The cypher  statement will be executed one per row.
 - -o file.csv: tab or comma separated output data file, all cypher result rows will be written to file, column labels become headers
 - -q: input/output file with quotes
-- -d delim: delim used to separate files
+- -d delim: delim used to separate files (e.g. `-d " ", -d \t -d ,` )
 - -b size: batch size for intermediate commits
 
-Example input file: in.csv
+Example input file: [in.csv](examples/in.csv)
 
 ````
 name	age
@@ -70,8 +70,9 @@ Selma	5
 Usage:
 
 ````
-$ import-cypher -i in.csv -o out.csv create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name
-Import statement execution created 3 rows of output.
+$ import-cypher -d"\t" -i in.csv -o out.csv create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name
+Query: create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name; infile in.csv delim '	' quoted false outfile out.csv batch-size 20000
+Import statement execution created 4 rows of output.
 ````
 
 Output file: out.csv
