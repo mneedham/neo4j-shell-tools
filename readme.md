@@ -109,8 +109,8 @@ Example input file: in.geoff
 Usage:
 
 ````
-$ import-geoff -g in.geoff`
-Geoff import created 3 entities.
+$ import-geoff -g in.geoff
+Geoff import of in.geoff created 3 entities.
 ````
 
 #### GraphML Import
@@ -152,6 +152,9 @@ Usage:
 
 ````
 $ import-graphml -i in.xml
+GraphML-Import file in.xml rel-type RELATED_TO batch-size 40000 use disk-cache false
+0. 100%: nodes = 1 rels = 0 properties = 0 time 11 ms
+Finished: nodes = 2 rels = 1 properties = 2 total time 16 ms
 GraphML import created 3 entities.
 ````
 
