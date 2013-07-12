@@ -9,31 +9,35 @@ neo4j server's lib directory e.g.
 
 ````
 cd /path/to/neo4j-community-1.9.1
-wget http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip 
-unzip neo4j-shell-tools-1.9.zip -d lib
+curl http://dist.neo4j.org/jexp/shell/neo4j-shell-tools-1.9.zip -o neo4j-shell-tools.zip 
+unzip neo4j-shell-tools.zip -d lib
 ````
 
-### Importing Data
+### Before you start
 
-The first step is to startup the neo4j-shell from your neo4j directory:
+Restart neo4j and then launch the neo4j-shell:
 
 ````
 cd /path/to/neo4j-community-1.9.1
+./bin/neo4j restart
 ./bin/neo4j-shell
 ````
 
 That assumes a default neo4j instance running on port 7474. You can call `./bin/neo4j-shell --help` to get a list of other ways to connect to a neo4j instance.
 
-#### Available Commands
 
-* [Auto Index](#auto-import)
-* [Cypher Import](#cypher-import)
-* [Geoff Import](#geoff-import)
-* [GraphML Import](#graphml-import)
+### Importing workflow
 
-#### Auto Index
+Before importing data, use the [Auto Index](#setup-auto-indexing) command to set up indexing so that you'll be able to find the data afterwards.
 
-Not about importing data per-sec, the auto index command is used to automatically create indexes on certain properties defined on nodes or relationships. This is in addition to the properties defined in 'conf/neo4j.properties'.
+Then choose a suitable import command, depending on how your data is structured.
+* If your data is formatted as [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) statements, use the [Cypher Import](#cypher-import) command.
+* If your data is in [geoff](http://nigelsmall.com/geoff) format, use the [Geoff Import](#geoff-import) command.
+* If your data is in [GraphML](http://graphml.graphdrawing.org/) format, use the [GraphML Import](#graphml-import) command.
+
+#### Setup auto indexing
+
+The auto index command is used to automatically create indexes on certain properties defined on nodes or relationships. This is in addition to the properties defined in 'conf/neo4j.properties'.
 
 `auto-index [-t Node|Relationship] [-r] name age title` 
 
@@ -43,11 +47,12 @@ Usage:
 
 ````
 $ auto-index name age title
+Enabling auto-indexing of Node properties: [name, age, title]
 ````
 
 #### Cypher Import
 
-Create data using [write clauses](http://docs.neo4j.org/chunked/milestone/query-write.html) in the [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) query language.
+Populate your database with [write clauses](http://docs.neo4j.org/chunked/milestone/query-write.html) in the [cypher](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html) query language.
 
 `import-cypher [-i in.csv] [-o out.csv] [-d ,] [-q] [-b 10000] create (n {name: {name}, age: {age}}) return id(n) as id, n.name as name`
 
@@ -87,7 +92,7 @@ id	name
 
 #### Geoff Import
 
-Create data using [geoff](http://nigelsmall.com/geoff) - a declarative notation for representing graph data in a human-readable format.
+Populate your database with [geoff](http://nigelsmall.com/geoff) - a declarative notation for representing graph data in a human-readable format.
 
 `import-geoff [-g in.geoff]`
 
@@ -110,7 +115,7 @@ Geoff import created 3 entities.
 
 #### GraphML Import
 
-Create data using [GraphML](http://graphml.graphdrawing.org/) - an XML based file format used to describe graphs.
+Populate your database from [GraphML](http://graphml.graphdrawing.org/) files. GraphML is an XML file format used to describe graphs.
 
 `import-graphml [-i in.xml] [-t REL_TYPE] [-b 20000] [-c]`
 
@@ -149,6 +154,10 @@ Usage:
 $ import-graphml -i in.xml
 GraphML import created 3 entities.
 ````
+
+### Prerequisites
+
+An up and running neo4j database which you can [download from here](http://www.neo4j.org/download).
 
 ### Other Technical Details
 
